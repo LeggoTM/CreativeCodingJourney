@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="600">
+
+    </canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+
+        context.lineWidth = 4;
+
+        const width = 60;
+        const height = 60;
+        const gap = 20;
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+
+                let x = 100 + (width + gap) * i;
+                let y = 100 + (height + gap) * j;
+
+
+                context.beginPath();
+                context.rect(x, y, width, height);
+                context.stroke();
+
+                if (Math.random() > 0.5) {
+
+                    const sizeMod = 16;
+                    context.beginPath();
+                    context.rect(x + (sizeMod / 2), y + (sizeMod / 2), width - sizeMod, height - sizeMod);
+                    context.stroke();
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
