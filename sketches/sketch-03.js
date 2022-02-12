@@ -22,7 +22,7 @@ const sketch = ({ context, width, height }) => {
   }
 
   return ({ context, width, height }) => {
-    context.fillStyle = 'black';
+    context.fillStyle = 'white';
     context.fillRect(0, 0, width, height);
 
     for (let i = 0; i < agents.length; i++) {
@@ -37,7 +37,7 @@ const sketch = ({ context, width, height }) => {
         context.lineWidth = math.mapRange(dist, 0, 200, 10, 1);
 
         context.beginPath();
-        context.strokeStyle = "white";
+        context.strokeStyle = "black";
         context.moveTo(agent.pos.x, agent.pos.y);
         context.lineTo(other.pos.x, other.pos.y);
         context.stroke();
@@ -98,7 +98,7 @@ class Agent {
 
     context.beginPath();
     context.arc(0, 0, this.radius, 0, Math.PI * 2);
-    context.strokeStyle = "white";
+    context.strokeStyle = "black";
     context.fill();
     context.stroke();
     
